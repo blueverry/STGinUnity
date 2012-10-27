@@ -8,7 +8,8 @@ function Start ()
 {
 	while(true)
 	{
-		Instantiate(enemyBulletPrefab, transform.position, transform.rotation);
+		Instantiate(enemyBulletPrefab, transform.position, transform.rotation * Quaternion.AngleAxis(10, Vector3(0, 1, 0)));
+		Instantiate(enemyBulletPrefab, transform.position, transform.rotation * Quaternion.AngleAxis(-10, Vector3(0, 1, 0)));
 		yield WaitForSeconds(bulletTime);
 	}
 	
