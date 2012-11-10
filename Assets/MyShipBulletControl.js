@@ -2,7 +2,7 @@
 var bulletSpeed = 1.0;
 
 function Start () {
-	yield WaitForSeconds(1.0);
+	yield WaitForSeconds(0.5);
 	Destroy(gameObject);
 }
 

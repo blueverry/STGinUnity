@@ -168,3 +168,5 @@ Assembly-UnityScript-vs.unityproj
 STGinUnity.sln
 STGinUnity.userprefs
 STGinUnity-csharp.sln
+
+*.apk
