@@ -11,8 +11,8 @@ function Start ()
 	{
 		// if (enemyType == A)
 		// {
-		Instantiate(enemyBulletPrefab, transform.position, transform.rotation * Quaternion.AngleAxis(10, Vector3(0, 1, 0)));
-		Instantiate(enemyBulletPrefab, transform.position, transform.rotation * Quaternion.AngleAxis(-10, Vector3(0, 1, 0)));
+		// Instantiate(enemyBulletPrefab, transform.position, transform.rotation * Quaternion.AngleAxis(10, Vector3(0, 1, 0)));
+		// Instantiate(enemyBulletPrefab, transform.position, transform.rotation * Quaternion.AngleAxis(-10, Vector3(0, 1, 0)));
 		yield WaitForSeconds(bulletTime);
 		// }
 		// if else (enemyType == B)
@@ -23,6 +23,9 @@ function Start ()
 		//		yield WaitForSeconds(bulletTime);
 		// }
 	}
+	
+	yield WaitForSeconds(12.0);
+	Destroy(gameObject);
 }
 
 function Update ()
