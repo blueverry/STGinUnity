@@ -4,7 +4,7 @@ var enemyTime = 1.0;
 var enemyType : String[];
 
 private function EnemyAppear (appearancePosition : Vector3, letter : String, enemySpeed : float, enemyLife : int, 
-							  enemyColor : String, enemyScale : float)
+							  enemyColor : String, enemyScale : float, score : int)
 {
 
 	for (var c in letter)
@@ -16,6 +16,7 @@ private function EnemyAppear (appearancePosition : Vector3, letter : String, ene
 		enemy.GetComponent(EnemyControl).enemySpeed = enemySpeed;
 		enemy.transform.localScale = enemyScale * Vector3(1, 1, 1);
 		enemyLife = Mathf.Max(enemyLife - 5, 5);
+		enemy.GetComponent(EnemyControl).score = score;
 	}
 }
 
@@ -28,7 +29,7 @@ function Start () {
 		{
 			var appearancePositionRandomX = Random.Range(-7.0, 7.0);
 			EnemyAppear( transform.position + Vector3(appearancePositionRandomX ,0 ,0),
-						 enemyType[Random.Range(0, enemyType.Length)], 0.05, 30, "white", 1);
+						 enemyType[Random.Range(0, enemyType.Length)], 0.05, 30, "white", 1, 100);
 		}
 		else if (randomValue > 0.4 && randomValue <= 0.8)
 		{
@@ -38,14 +39,14 @@ function Start () {
 			{
 				appearancePositionRandomX = Random.Range(-7.0, -6.0);
 				EnemyAppear( transform.position + Vector3(i * space - 7.0 + offset,0 ,i),
-							 "―＝十", 0.2, 20, "#80ff80", 1);
+							 "―＝十", 0.2, 15, "#80ff80", 1, 50);
 			}
 		}
 		else
 		{
 			appearancePositionRandomX = Random.Range(-7.0, 7.0);
 			EnemyAppear( transform.position + Vector3(appearancePositionRandomX ,0 ,0),
-						 enemyType[Random.Range(0, enemyType.Length)], 0.03, 60, "red", 2);
+						 enemyType[Random.Range(0, enemyType.Length)], 0.03, 50, "red", 2, 300);
 		
 		}
 		yield WaitForSeconds(enemyTime);
