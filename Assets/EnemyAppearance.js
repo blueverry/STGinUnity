@@ -25,13 +25,13 @@ function Start () {
 	{
 		var randomValue = Random.value;
 		
-		if (randomValue <= 0.4)
+		if (randomValue <= 0.5)
 		{
 			var appearancePositionRandomX = Random.Range(-7.0, 7.0);
 			EnemyAppear( transform.position + Vector3(appearancePositionRandomX ,0 ,0),
-						 enemyType[Random.Range(0, enemyType.Length)], 0.05, 30, "white", 1, 100);
+						 enemyType[Random.Range(0, enemyType.Length)], Random.Range(5 ,10)*0.01, 30, "white", 1, 100);
 		}
-		else if (randomValue > 0.4 && randomValue <= 0.8)
+		else if (randomValue > 0.5 && randomValue <= 0.8)
 		{
 			var offset = Random.Range(-2.0, 2.0);
 			var space = Random.Range(2.0, 4.0);

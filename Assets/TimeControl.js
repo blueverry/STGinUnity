@@ -1,6 +1,5 @@
 #pragma strict
-var time = 120;
-var flame = 0;
+var time = 120.0;
 
 function OnGUI () {
 	GUI.Label(Rect(0, 20, 500, 500), "Time : "+time);
@@ -11,11 +10,12 @@ function Start () {
 }
 
 function Update () {
-	flame++;
+	time -= Time.deltaTime;
 	
-	if (flame >= 60)
+	if (time <= 0.0)
 	{
-		time -= 1;
-		flame = 0;
+		Destroy(GameObject.Find("MyShip"));
+		FindObjectOfType(GameOverScreen).enabled = true;
+		enabled = false;
 	}
 }

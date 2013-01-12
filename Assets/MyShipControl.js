@@ -63,10 +63,11 @@ function OnTriggerEnter (other : Collider)
 {
 	Debug.Log("myShipHIT");
 
-	if(other.gameObject.tag == "EnemyBullet")
+	if(other.gameObject.tag == "EnemyShip")
 	{
 		Destroy(other.gameObject);
 		FindObjectOfType(GameOverScreen).enabled = true;
+		FindObjectOfType(TimeControl).enabled = false;
 		Destroy(gameObject);
 	}
 }
